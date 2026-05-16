@@ -88,6 +88,10 @@ def build_parser() -> argparse.ArgumentParser:
     exec_tool_parser = subparsers.add_parser('exec-tool', help='execute a mirrored tool shim by exact name')
     exec_tool_parser.add_argument('name')
     exec_tool_parser.add_argument('payload')
+
+    serve_parser = subparsers.add_parser('serve', help='run the web UI exposing every workspace capability over HTTP')
+    serve_parser.add_argument('--host', default='127.0.0.1')
+    serve_parser.add_argument('--port', type=int, default=8000)
     return parser
 
 
@@ -205,6 +209,9 @@ def main(argv: list[str] | None = None) -> int:
         result = execute_tool(args.name, args.payload)
         print(result.message)
         return 0 if result.handled else 1
+    if args.command == 'serve':
+        from .webapp import serve
+        return serve(host=args.host, port=args.port)
     parser.error(f'unknown command: {args.command}')
     return 2
 

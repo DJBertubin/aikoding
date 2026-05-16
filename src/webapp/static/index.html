@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AiKoding — Porting Workspace Console</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">AK</span>
+        <div>
+          <strong>AiKoding</strong>
+          <small>Porting Workspace Console</small>
+        </div>
+      </div>
+      <nav id="nav">
+        <button class="nav-item active" data-view="overview">Overview</button>
+        <button class="nav-item" data-view="commands">Commands</button>
+        <button class="nav-item" data-view="tools">Tools</button>
+        <button class="nav-item" data-view="router">Prompt Router</button>
+        <button class="nav-item" data-view="bootstrap">Bootstrap Session</button>
+        <button class="nav-item" data-view="turnloop">Turn Loop</button>
+        <button class="nav-item" data-view="graphs">Graphs &amp; Pools</button>
+        <button class="nav-item" data-view="parity">Parity Audit</button>
+        <button class="nav-item" data-view="setup">Setup Report</button>
+        <button class="nav-item" data-view="modes">Runtime Modes</button>
+        <button class="nav-item" data-view="sessions">Sessions</button>
+      </nav>
+      <div class="sidebar-foot">
+        <span id="health-dot" class="dot"></span>
+        <span id="health-text">connecting…</span>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <h1 id="view-title">Overview</h1>
+        <p id="view-subtitle">Live status of the Python porting workspace.</p>
+      </header>
+      <section id="view-root" class="view-root">
+        <div class="loading">Loading…</div>
+      </section>
+    </main>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

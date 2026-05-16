@@ -95,6 +95,22 @@ The new Python `src/` tree currently provides:
 - **`query_engine.py`** — renders a Python porting summary from the active workspace
 - **`main.py`** — a CLI entrypoint for manifest and summary output
 
+## Web UI
+
+The workspace ships with a zero-dependency web console (standard-library
+HTTP server only — no `pip install` required) that exposes every CLI
+capability through a browser:
+
+```bash
+python3 -m src.main serve --host 127.0.0.1 --port 8000
+```
+
+Then open <http://127.0.0.1:8000>. The console provides an overview
+dashboard, searchable command/tool inventories, the prompt router,
+full bootstrap sessions, the turn loop, parity audit, setup report,
+graphs/pools, runtime-mode simulation, and session persistence — all
+backed by a JSON API under `/api/`.
+
 ## Quickstart
 
 Render the Python porting summary:
